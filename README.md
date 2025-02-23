@@ -6,6 +6,10 @@
 
 This is a simple script to extract data from PDF documents using Docling and using OpenAI API with structured outputs to put it in a clean database.
 
-![Extracted text and PDF Invoice]('/Users/ju/Library/CloudStorage/GoogleDrive-urrutijoaquin@gmail.com/Mi unidad/Python Scripts/openai-api/data/external/imagen_factura.jpeg')
+<!-- ![Extracted text and PDF Invoice]('/Users/ju/Library/CloudStorage/GoogleDrive-urrutijoaquin@gmail.com/Mi unidad/Python Scripts/openai-api/data/external/imagen_factura.jpeg') -->
 
-[Docling](https://ds4sd.github.io/docling/)
+<img src="/Users/ju/Library/CloudStorage/GoogleDrive-urrutijoaquin@gmail.com/Mi unidad/Python Scripts/openai-api/data/external/imagen_factura.jpeg">
+
+<a target="_blank" href="https://ds4sd.github.io/docling/">
+    <img src="https://ds4sd.github.io/docling/assets/docling_processing.png" />
+</a>
