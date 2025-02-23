@@ -11,5 +11,5 @@ This is a simple script to extract data from PDF documents using Docling and usi
 <img src="/Users/ju/Library/CloudStorage/GoogleDrive-urrutijoaquin@gmail.com/Mi unidad/Python Scripts/openai-api/data/external/imagen_factura.jpeg">
 
 <a target="_blank" href="https://ds4sd.github.io/docling/">
-    <img src="https://ds4sd.github.io/docling/assets/docling_processing.png" />
+    <img src="https://ds4sd.github.io/docling/assets/docling_processing.png" width="100"/>
 </a>
