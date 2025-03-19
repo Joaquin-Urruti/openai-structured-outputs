@@ -10,5 +10,5 @@ This is a simple script to extract data from PDF documents using Docling and usi
 
 
 <a target="_blank" href="https://github.com/docling-project/docling/">
-    <img src="./reports/figures/docling.png" width="100"/>
+    <img src="./reports/figures/docling.png" width="300"/>
 </a>
