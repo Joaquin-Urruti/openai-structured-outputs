@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Extrae datos estructurados de documentos PDF utilizando [Docling](https://github.com/docling-project/docling/) para el parsing y la API de OpenAI con [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs) para organizar la información en bases de datos limpias.
+Extract structured data from PDF documents using [Docling](https://github.com/docling-project/docling/) for parsing and the OpenAI API with [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs) to organize information into clean databases.
 
 ![Extracted text and PDF Invoice](reports/figures/imagen_factura.jpeg)
 
@@ -12,114 +12,114 @@ Extrae datos estructurados de documentos PDF utilizando [Docling](https://github
     <img src="./reports/figures/docling.png" width="300"/>
 </a>
 
-## Funcionalidades
+## Features
 
-- Conversión de PDF a Markdown usando Docling
-- Extracción de datos estructurados via OpenAI API con modelos Pydantic
-- Sistema de cache para evitar reprocesar archivos (hash SHA-256)
-- Exportación a Excel con múltiples hojas organizadas
-- Soporte para procesamiento batch de directorios
+- PDF to Markdown conversion using Docling
+- Structured data extraction via OpenAI API with Pydantic models
+- Caching system to avoid reprocessing files (SHA-256 hash)
+- Excel export with multiple organized sheets
+- Batch directory processing support
 
-## Caso de Uso: Extracción de CVs
+## Use Case: CV Extraction
 
-El proyecto incluye un pipeline completo para extraer información de currículums vitae:
+The project includes a complete pipeline to extract information from curriculum vitae:
 
-- **Candidatos**: Datos personales, contacto, resumen
-- **Experiencia**: Historial laboral con fechas y responsabilidades
-- **Educación**: Formación académica
-- **Habilidades**: Skills técnicos y blandos con nivel
-- **Certificaciones**: Cursos y certificados
+- **Candidates**: Personal data, contact info, summary
+- **Experience**: Work history with dates and responsibilities
+- **Education**: Academic background
+- **Skills**: Technical and soft skills with proficiency level
+- **Certifications**: Courses and certificates
 
-## Instalación
+## Installation
 
-### Requisitos previos
+### Prerequisites
 
 - Python 3.10+
-- Conda (recomendado) o pip
-- API Key de OpenAI
+- Conda (recommended) or pip
+- OpenAI API Key
 
 ### Setup
 
 ```bash
-# Crear entorno conda
+# Create conda environment
 make create_environment
 conda activate openai-api
 
-# Instalar dependencias
+# Install dependencies
 make requirements
 
-# Configurar API key
-echo "OPENAI_API_KEY=tu-api-key" > .env
+# Configure API key
+echo "OPENAI_API_KEY=your-api-key" > .env
 ```
 
-## Uso
+## Usage
 
-### Extracción de CVs
+### CV Extraction
 
 ```bash
 python notebooks/extract_cv_data.py
 ```
 
-El script:
-1. Busca archivos PDF en el directorio configurado
-2. Verifica si ya fueron procesados (cache de hashes)
-3. Convierte cada PDF a Markdown con Docling
-4. Envía el contenido a OpenAI para extracción estructurada
-5. Agrega los datos al archivo Excel de salida
+The script:
+1. Searches for PDF files in the configured directory
+2. Checks if they were already processed (hash cache)
+3. Converts each PDF to Markdown with Docling
+4. Sends content to OpenAI for structured extraction
+5. Appends data to the output Excel file
 
-### Forzar reprocesamiento
+### Force Reprocessing
 
-Para reprocesar archivos ya procesados, modificar el parámetro `force=True` en la llamada a `process_pdf()`.
+To reprocess already processed files, modify the `force=True` parameter in the `process_pdf()` call.
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
-├── notebooks/                  # Scripts de extracción
-│   ├── extract_cv_data.py      # Pipeline principal de CVs
-│   ├── extract_cv_data.ipynb   # Versión notebook
-│   └── extract_invoice_data.ipynb  # Extracción de facturas
-├── src/                        # Módulos de soporte
-│   └── config.py               # Configuración de paths
-├── reports/figures/            # Imágenes para documentación
-├── Makefile                    # Automatización de tareas
-├── requirements.txt            # Dependencias pip
-├── pyproject.toml              # Configuración del proyecto
-└── setup.cfg                   # Configuración de linters
+├── notebooks/                  # Extraction scripts
+│   ├── extract_cv_data.py      # Main CV pipeline
+│   ├── extract_cv_data.ipynb   # Notebook version
+│   └── extract_invoice_data.ipynb  # Invoice extraction
+├── src/                        # Support modules
+│   └── config.py               # Path configuration
+├── reports/figures/            # Documentation images
+├── Makefile                    # Task automation
+├── requirements.txt            # pip dependencies
+├── pyproject.toml              # Project configuration
+└── setup.cfg                   # Linter configuration
 ```
 
-## Desarrollo
+## Development
 
 ```bash
-# Formatear código
+# Format code
 make format
 
-# Verificar estilo
+# Check style
 make lint
 
-# Limpiar archivos temporales
+# Clean temporary files
 make clean
 ```
 
-## Dependencias Principales
+## Main Dependencies
 
-| Librería | Uso |
-|----------|-----|
-| [docling](https://github.com/docling-project/docling/) | Conversión PDF a Markdown |
-| [openai](https://github.com/openai/openai-python) | API client con structured outputs |
-| [pydantic](https://docs.pydantic.dev/) | Validación y esquemas de datos |
-| [pandas](https://pandas.pydata.org/) | Manipulación de datos |
-| [openpyxl](https://openpyxl.readthedocs.io/) | Lectura/escritura de Excel |
+| Library | Purpose |
+|---------|---------|
+| [docling](https://github.com/docling-project/docling/) | PDF to Markdown conversion |
+| [openai](https://github.com/openai/openai-python) | API client with structured outputs |
+| [pydantic](https://docs.pydantic.dev/) | Data validation and schemas |
+| [pandas](https://pandas.pydata.org/) | Data manipulation |
+| [openpyxl](https://openpyxl.readthedocs.io/) | Excel read/write |
 
-## Configuración
+## Configuration
 
-El proyecto usa variables de entorno para configuración sensible:
+The project uses environment variables for sensitive configuration:
 
-| Variable | Descripción |
+| Variable | Description |
 |----------|-------------|
-| `OPENAI_API_KEY` | API key de OpenAI (requerida) |
+| `OPENAI_API_KEY` | OpenAI API key (required) |
 
-Crear archivo `.env` en la raíz del proyecto con las variables necesarias.
+Create a `.env` file in the project root with the required variables.
 
-## Licencia
+## License
 
-Este proyecto está bajo la licencia MIT.
+This project is licensed under the MIT License.
