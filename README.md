@@ -82,6 +82,7 @@ To reprocess already processed files, modify the `force=True` parameter in the `
 │   └── config.py               # Path configuration
 ├── docs/                       # Documentation
 │   └── TECHNICAL_DOCUMENTATION.md  # Detailed technical docs
+├── logs/                       # Execution logs (auto-created)
 ├── reports/figures/            # Documentation images
 ├── Makefile                    # Task automation
 ├── requirements.txt            # pip dependencies
@@ -118,13 +119,34 @@ make clean
 
 ## Configuration
 
-The project uses environment variables for sensitive configuration:
+The project uses environment variables for configuration:
 
-| Variable | Description |
-|----------|-------------|
-| `OPENAI_API_KEY` | OpenAI API key (required) |
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `OPENAI_API_KEY` | OpenAI API key | Yes |
+| `CV_ROOT_DIR` | Directory containing PDF files to process | No (has default) |
+| `CV_OUTPUT_NAME` | Output Excel filename | No (default: `base_cv_capital_humano.xlsx`) |
 
-Create a `.env` file in the project root with the required variables.
+Create a `.env` file in the project root:
+
+```bash
+OPENAI_API_KEY=your-api-key
+CV_ROOT_DIR=/path/to/your/cv/folder
+```
+
+### Running as Cronjob
+
+The script is designed to run reliably from cron. Example crontab entry:
+
+```bash
+# Run every day at 8 AM
+0 8 * * * /path/to/conda/envs/openai-api/bin/python /path/to/project/notebooks/extract_cv_data.py
+
+# Or with environment variables
+0 8 * * * CV_ROOT_DIR=/data/cvs /path/to/python /path/to/extract_cv_data.py
+```
+
+Logs are written to `logs/extract_cv_YYYYMMDD.log` for debugging.
 
 ## License
 

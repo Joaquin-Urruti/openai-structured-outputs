@@ -211,6 +211,7 @@ models/
 logs/
 *.log
 log.txt
+extract_cv_*.log
 
 # PDF and document files (often large/sensitive)
 *.pdf

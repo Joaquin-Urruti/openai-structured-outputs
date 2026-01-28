@@ -59,4 +59,14 @@ python notebooks/extract_cv_data.py
 
 ## Environment Variables
 
-Requires `OPENAI_API_KEY` in `.env` file (loaded via python-dotenv).
+Required in `.env` file (loaded via python-dotenv):
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `OPENAI_API_KEY` | OpenAI API key | Yes |
+| `CV_ROOT_DIR` | Directory containing PDF files | No |
+| `CV_OUTPUT_NAME` | Output Excel filename | No |
+
+## Logging
+
+Logs are written to `logs/extract_cv_YYYYMMDD.log`. The logs directory is auto-created on first run.
