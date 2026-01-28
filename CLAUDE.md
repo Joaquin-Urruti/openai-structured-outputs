@@ -19,9 +19,6 @@ make format                      # Format code with black
 make lint                        # Run flake8, isort, and black checks
 make clean                       # Remove compiled Python files and __pycache__
 
-# Data processing
-make data                        # Run src/dataset.py (installs requirements first)
-
 # Run CV extraction
 python notebooks/extract_cv_data.py
 ```
@@ -30,8 +27,6 @@ python notebooks/extract_cv_data.py
 
 ### Source Code (`src/`)
 - **config.py**: Path configuration using pathlib. Defines `PROJ_ROOT`, `DATA_DIR`, `RAW_DATA_DIR`, `INTERIM_DATA_DIR`, `PROCESSED_DATA_DIR`, `MODELS_DIR`, `REPORTS_DIR`, `FIGURES_DIR`. Loads `.env` automatically.
-- **dataset.py**, **features.py**, **plots.py**: CLI scripts using Typer
-- **modeling/train.py**, **modeling/predict.py**: ML model CLI scripts using Typer
 
 ### CV Extraction Pipeline (`notebooks/extract_cv_data.py`)
 1. Walk directory tree to find PDF files

@@ -74,18 +74,17 @@ Para reprocesar archivos ya procesados, modificar el parámetro `force=True` en 
 ## Estructura del Proyecto
 
 ```
-├── src/                    # Código fuente
-│   ├── config.py           # Configuración de paths
-│   ├── dataset.py          # Procesamiento de datos (CLI)
-│   ├── features.py         # Feature engineering (CLI)
-│   ├── plots.py            # Visualizaciones (CLI)
-│   └── modeling/           # Scripts de ML
-├── notebooks/              # Notebooks y scripts de extracción
-│   └── extract_cv_data.py  # Pipeline principal de extracción
-├── data/                   # Datos (no versionados)
-├── models/                 # Modelos entrenados (no versionados)
-├── reports/                # Reportes y figuras
-└── docs/                   # Documentación
+├── notebooks/                  # Scripts de extracción
+│   ├── extract_cv_data.py      # Pipeline principal de CVs
+│   ├── extract_cv_data.ipynb   # Versión notebook
+│   └── extract_invoice_data.ipynb  # Extracción de facturas
+├── src/                        # Módulos de soporte
+│   └── config.py               # Configuración de paths
+├── reports/figures/            # Imágenes para documentación
+├── Makefile                    # Automatización de tareas
+├── requirements.txt            # Dependencias pip
+├── pyproject.toml              # Configuración del proyecto
+└── setup.cfg                   # Configuración de linters
 ```
 
 ## Desarrollo
