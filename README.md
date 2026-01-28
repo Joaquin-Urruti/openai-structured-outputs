@@ -80,12 +80,18 @@ To reprocess already processed files, modify the `force=True` parameter in the `
 │   └── extract_invoice_data.ipynb  # Invoice extraction
 ├── src/                        # Support modules
 │   └── config.py               # Path configuration
+├── docs/                       # Documentation
+│   └── TECHNICAL_DOCUMENTATION.md  # Detailed technical docs
 ├── reports/figures/            # Documentation images
 ├── Makefile                    # Task automation
 ├── requirements.txt            # pip dependencies
 ├── pyproject.toml              # Project configuration
 └── setup.cfg                   # Linter configuration
 ```
+
+## Documentation
+
+For detailed technical documentation including architecture diagrams, implementation details, and code examples, see [docs/TECHNICAL_DOCUMENTATION.md](docs/TECHNICAL_DOCUMENTATION.md).
 
 ## Development
 
